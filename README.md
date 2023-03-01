@@ -65,3 +65,23 @@ Then, start the rosbridge server by executing:
 Publish any String into `/next_country` topic will switch the flag to the next country:
 
 #### `rostopic pub /next_country std_msgs/String "data: ''"`
+
+Publish string "correct" into `/audio` topic will play an audio confirming the correctness of the answer and reiterate the name of the country of the flag shown on the screen:
+
+#### `rostopic pub audio std_msgs/String "data: 'correct ''"`
+
+Publish string "incorrect" into `/audio` topic will play an audio stating the incorrectness of the answer and reveal the name of the country of the flag shown on the screen:
+
+#### `rostopic pub audio std_msgs/String "data: 'incorrect ''"`
+
+Publish string "intro" into `/audio` topic will play an introduction to the game audio:
+
+#### `rostopic pub audio std_msgs/String "data: 'intro''"`
+
+Publish string "ask" into `/audio` topic will play an audio asking for someone to shout out an answer:
+
+#### `rostopic pub audio std_msgs/String "data: 'ask ''"`
+
+Publish string "end" into `/audio` topic will play an audio concluding the game:
+
+#### `rostopic pub audio std_msgs/String "data: 'end ''"`
